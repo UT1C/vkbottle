@@ -42,9 +42,9 @@ classifiers = [
 python = "^3.8"
 aiohttp = "^3.8.1"
 choicelib = "^0.1.5"
-pydantic = "^1.10.4"
+pydantic = "^2.4.1"
 vbml = "^1.1.post1"
-vkbottle-types = "^5.131.146.14"
+vkbottle-types = { git = "https://github.com/UT1C/vkbottle-types", branch = "use-pydantic-v1" }
 aiofiles = "23.1.0"
 typing-extensions = "^4.4.0"
 colorama = "^0.4.6"
@@ -191,7 +191,7 @@ ignore = [
 
 [tool.ruff.pep8-naming]
 # Allow Pydantic's `@validator` decorator to trigger class method treatment.
-classmethod-decorators = ["classmethod", "pydantic.validator", "pydantic.root_validator"]
+classmethod-decorators = ["classmethod", "pydantic.v1.validator", "pydantic.v1.root_validator"]
 
 [tool.ruff.flake8-type-checking]
 exempt-modules = ["typing_extensions", "typing"]

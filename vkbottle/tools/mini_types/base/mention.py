@@ -1,6 +1,9 @@
 import re
 
-from pydantic import BaseModel
+try:
+    from pydantic.v1 import BaseModel
+except ImportError:
+    from pydantic import BaseModel
 
 MENTION_PATTERN = re.compile(r"^\[(?P<type>club|public|id)(?P<id>\d*)\|(?P<text>.+)\],?\s?")
 

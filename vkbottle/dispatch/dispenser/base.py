@@ -1,7 +1,10 @@
 from enum import Enum
 from typing import Any
 
-from pydantic import BaseModel, validator
+try:
+    from pydantic.v1 import BaseModel, validator
+except ImportError:
+    from pydantic import BaseModel, validator
 
 
 class BaseStateGroup(str, Enum):

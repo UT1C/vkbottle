@@ -1,6 +1,9 @@
 from typing import TYPE_CHECKING, List, Optional
 
-from pydantic import root_validator
+try:
+    from pydantic.v1 import root_validator
+except ImportError:
+    from pydantic import root_validator
 from vkbottle_types.events.bot_events import MessageNew
 
 from vkbottle.tools.mini_types.base import BaseMessageMin
